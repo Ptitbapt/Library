@@ -18,9 +18,13 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        imc = txtTaille / (poids * poids);
+        btnConvertisseur.setOnMouseClicked(btnConvertisseurAction -> {
+            if (!pageCenter.getChildren().contains(form1)) {
+                pageCenter.getChildren().addAll(form1);
+                pageCenter.getChildren().removeAll(form2);
+            }
+        });
 
-    }
 
 
     }

@@ -8,14 +8,20 @@ import java.util.ResourceBundle;
 public class ImcController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        txtTaille.setOnKeyTyped(txtTailleAction -> {
-            if(!txtTaille.getText().isEmpty()){
-                double maValue = Double.parseDouble(txtTaille.getText());
-                txtImc.setText(tailleVersimc(maValue));
+        txtPoids.setOnKeyTyped(txtTailleAction -> {
+            if(!txtPoids.getText().isEmpty()){
+                double maValue = Double.parseDouble(txtPoids.getText());
+                txtImc.setText(poidsVersImc(maValue));
             }else{
                 txtimc.setText("");
             }
 
         });
+
     }
+    public String poidsVersImc (double txtPoids,double txtTaille) {
+        double imcResult = txtPoids / (txtTaille * txtTaille);
+        return Double.toString(imcResult);
+    }
+
 }
