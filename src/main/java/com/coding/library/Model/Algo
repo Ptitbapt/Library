@@ -1,0 +1,10 @@
+int [] binaire = new  int [20]
+int k;
+
+TANT QUE i > 0{
+    binaire[k]=i%2
+    i=i/2
+}
+POUR (n = k -1; n >= 0; n--){
+    printf(binaire[n])
+}
