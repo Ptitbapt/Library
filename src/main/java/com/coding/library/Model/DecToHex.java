@@ -1,9 +1,9 @@
 package com.coding.library.Model;
 import java.util.*;
 
-public class AlgoTest{
+public class DecToHex {
 
-    
+
     public static String toHex(int decimal){
         int rem;
         String hex="";
