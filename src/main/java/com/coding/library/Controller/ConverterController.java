@@ -1,20 +1,13 @@
 package com.coding.library.Controller;
 
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.ResourceBundle;
 
-
-public class BinaryController implements Initializable {
-
-
+public class ConverterController implements Initializable {
     @FXML
     private TextArea txtBinaire;
 
@@ -48,23 +41,17 @@ public class BinaryController implements Initializable {
         int pi = 0;
 
         while (num != 0) {
-                result = num % 10;
-                ki += result * Math.pow(2, pi);
-                num = num / 10;
-                pi++;
-            }
+            result = num % 10;
+            ki += result * Math.pow(2, pi);
+            num = num / 10;
+            pi++;
+        }
         return ki + "";
 
-        }
-
-
-
-
-
+    }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
+    public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
         txtDecimal.setOnKeyTyped(event1 -> {
             int decimal = Integer.parseInt(txtDecimal.getText());
             txtBinaire.setText(String.valueOf(convertDecimalToBinary(decimal)));
@@ -80,7 +67,8 @@ public class BinaryController implements Initializable {
             txtBinaire.setText("");
             txtDecimal.setText("");
         });
-        }
-
     }
+
+}
+
 
