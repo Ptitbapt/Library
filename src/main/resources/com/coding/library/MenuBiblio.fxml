@@ -38,6 +38,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -46,7 +47,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.library.Controller.LibraryController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -94,7 +95,16 @@
                <children>
                   <VBox prefHeight="260.0" prefWidth="450.0">
                      <children>
-                        <TableView fx:id="tableView" prefHeight="261.0" prefWidth="450.0" />
+                        <TableView prefHeight="261.0" prefWidth="450.0">
+                          <columns>
+                            <TableColumn fx:id="colonneTitre" prefWidth="75.0" text="Titre" />
+                            <TableColumn fx:id="colonneAuteur" prefWidth="75.0" text="Auteur" />
+                              <TableColumn fx:id="colonneResume" prefWidth="75.0" text="Résumé" />
+                              <TableColumn fx:id="colonneColonne" prefWidth="75.0" text="Colonne" />
+                              <TableColumn fx:id="colonneRangee" prefWidth="75.0" text="Rangée" />
+                              <TableColumn fx:id="colonneParution" prefWidth="75.0" text="Parution" />
+                          </columns>
+                        </TableView>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <VBox prefHeight="200.0" prefWidth="100.0" />
