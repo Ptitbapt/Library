@@ -20,8 +20,8 @@ public class HexaController implements Initializable {
         String hexa = ""; // get the character of the hexadecimal array
         char hexchars[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
         while (dec > 0) { // Until it's divisible by 16
-            tmp = dec % 16; // get the rest
-            hexa = hexchars[tmp] + hexa; // add the char with the result
+            tmp = dec % 16; // Have the rest
+            hexa = hexchars[tmp] + hexa; // Print the character and the result
             dec = dec / 16; // divide by 16
         }
         return hexa;
