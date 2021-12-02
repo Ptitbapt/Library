@@ -1,0 +1,19 @@
+int [] binaire = new  int [20]
+int id = 0;
+
+TANT QUE num > 0
+    binaire[id] = num % 2;
+    num = num / 2;
+
+
+======================================================================================================================
+int [] decimal = new int [20];
+int result;
+int ki=0;
+int pi=0;
+
+TANT QUE num!0
+    result = num % 10;
+    ki = ki + result * (int)Math.pow(2,pi);
+    num = num/10;
+    pi++;

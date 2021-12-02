@@ -37,13 +37,13 @@ public class HexaController implements Initializable {
             val = 16 * val + index; // ex: 2D = 16 * 2 = 32 + D = 13 , 32 + 13 = 45
         }
 
-        return val+ "";
+        return val + "";
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         txtDec.setOnKeyReleased(ActKey -> {
-            if(txtDec.getText() == ""){
+            if (txtDec.getText() == "") {
                 txtHexa.setText("");
             } else {
                 txtHexa.setText(DecToHex(Integer.parseInt(txtDec.getText())));
@@ -52,7 +52,7 @@ public class HexaController implements Initializable {
         });
 
         txtHexa.setOnKeyReleased(ActKey -> {
-            if(txtHexa.getText() == "") {
+            if (txtHexa.getText() == "") {
                 txtDec.setText("");
             } else {
                 txtDec.setText(HexToDec(String.valueOf(txtHexa.getText())));
