@@ -53,9 +53,8 @@ public class ConverterController implements Initializable {
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
         txtDecimal.setOnKeyTyped(event1 -> {
-            int decimal = Integer.parseInt(txtDecimal.getText());
-            txtBinaire.setText(String.valueOf(convertDecimalToBinary(decimal)));
-
+                int decimal = Integer.parseInt(txtDecimal.getText());
+                txtBinaire.setText(String.valueOf(convertDecimalToBinary(decimal)));
         });
 
         txtBinaire.setOnKeyTyped(event2 -> {

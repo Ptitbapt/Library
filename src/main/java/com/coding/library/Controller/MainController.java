@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import com.coding.library.Controller.MenuAppController;
+import com.coding.library.Controller.*;
 public class MainController implements Initializable {
 
 
@@ -54,6 +54,11 @@ public class MainController implements Initializable {
     @FXML
     private MenuItem menuItemBiblio;
 
+    @FXML
+    private MenuItem itemQuit;
+    @FXML
+    private Button btnQuit;
+
 
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
@@ -79,10 +84,12 @@ public class MainController implements Initializable {
             menuApp.getChildren().removeAll(menuConversion, mainMenu);
             menuApp.getChildren().add(menuBiblio);
         });
+        itemQuit.setOnAction(event -> {
+            System.exit(0);
+        });
+        btnQuit.setOnAction(event -> {
+            System.exit(0);
+        });
 
     }
-
-
-
-
 }
