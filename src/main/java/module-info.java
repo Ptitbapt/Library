@@ -9,5 +9,7 @@ module com.coding.library {
     opens com.coding.library.Controller to javafx.fxml;
     exports com.coding.library;
     exports com.coding.library.Controller;
+    exports com.coding.library.Model;
+    opens com.coding.library.Model to javafx.fxml;
 
 }
