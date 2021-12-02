@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
@@ -24,19 +25,23 @@ public class BinaryController implements Initializable {
     private Button btnDelete;
 
     public String convertDecimalToBinary(int num) {
-        int[] binary = new int[30];
+        ArrayList<String> list = new ArrayList<>();
         int j = 0;
 
         while (num > 0) {
-            binary[j++] = num % 2;
+            list.add(j++, num % 2 + "");
             num = num / 2;
         }
 
+        String result = "";
 
-        return Arrays.toString(binary) ;
+        for (int i = list.size()-1; i >= 0; i--) {
+            result += list.get(i);
+        }
 
-
+        return result ;
     }
+
     public String convertBinaryToDecimal(int num) {
         int result;
         int ki = 0;
@@ -57,18 +62,20 @@ public class BinaryController implements Initializable {
 
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        txtDecimal.setOnKeyTyped(event -> {
-            txtBinaire.setText(convertDecimalToBinary(Integer.parseInt(txtDecimal.getText())));
+        txtDecimal.setOnKeyTyped(event1 -> {
+            int decimal = Integer.parseInt(txtDecimal.getText());
+            txtBinaire.setText(String.valueOf(convertDecimalToBinary(decimal)));
 
         });
 
-        txtBinaire.setOnKeyTyped(event -> {
-            txtDecimal.setText(convertBinaryToDecimal(Integer.parseInt(txtBinaire.getText())));
+        txtBinaire.setOnKeyTyped(event2 -> {
+            int binaire = Integer.parseInt(txtBinaire.getText());
+            txtDecimal.setText(String.valueOf(convertBinaryToDecimal(binaire)));
         });
+
         btnDelete.setOnMouseClicked(event -> {
             txtBinaire.setText("");
             txtDecimal.setText("");
