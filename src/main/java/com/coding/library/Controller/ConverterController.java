@@ -52,21 +52,13 @@ public class ConverterController implements Initializable {
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
         txtDecimal.setOnKeyTyped(event1 -> {
-            if (txtDecimal.getText() == "") { // If the text field of hexadecimal is empty
-                txtBinaire.setText(""); // Delete what's inside the text field of decimal
-            }else {
                 int decimal = Integer.parseInt(txtDecimal.getText());
                 txtBinaire.setText(String.valueOf(convertDecimalToBinary(decimal)));
-            }
         });
 
         txtBinaire.setOnKeyTyped(event2 -> {
-            if (txtBinaire.getText() == "") { // If the text field of hexadecimal is empty
-                txtDecimal.setText(""); // Delete what's inside the text field of decimal
-            }else {
-                int binaire = Integer.parseInt(txtBinaire.getText());
-                txtDecimal.setText(String.valueOf(convertBinaryToDecimal(binaire)));
-            }
+            int binaire = Integer.parseInt(txtBinaire.getText());
+            txtDecimal.setText(String.valueOf(convertBinaryToDecimal(binaire)));
         });
 
     }
