@@ -36,26 +36,6 @@ public class BiblioController implements Initializable {
     @FXML
     private TableColumn<Book, Integer> colColonne;
 
-    @FXML
-    private Button btnValiderBiblio;
-
-    @FXML
-    private TextField txtAuteur;
-
-    @FXML
-    private TextField txtColonne;
-
-    @FXML
-    private TextField txtParution;
-
-    @FXML
-    private TextField txtRangee;
-
-    @FXML
-    private TextArea txtResume;
-
-    @FXML
-    private TextField txtTitre;
 
 
 
@@ -71,13 +51,13 @@ public class BiblioController implements Initializable {
         tbData.setItems(books);
 
 
-        btnValiderBiblio.setOnAction(event -> {
-           books.add(new Book(txtTitre.getText(),txtAuteur.getText(),Integer.parseInt(txtColonne.getText()),Integer.parseInt(txtRangee.getText()),Integer.parseInt(txtParution.getText()),txtResume.getText()));
-        });
-
     }
     private ObservableList<Book> books = FXCollections.observableArrayList(
-            new Book("Test", "Auteur 1", 1, 1, 1, "Resume 1")
+            new Book("Titre 1", "Auteur 1", 1, 1, 1, "Resume 1"),
+            new Book("Titre 2", "Auteur 2", 2, 2, 1, "Resume 2"),
+            new Book("Titre 3", "Auteur 3", 3, 3, 1, "Resume 3"),
+            new Book("Titre 4", "Auteur 4", 4, 4, 1, "Resume 4"),
+            new Book("Titre 5", "Auteur 5", 5, 5, 1, "Resume 5")
     );
 
 }
