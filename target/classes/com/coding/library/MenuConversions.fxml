@@ -62,6 +62,7 @@
             <AnchorPane fx:id="anchorPaneRight">
                <children>
                   <fx:include fx:id="BinaryBox2" source="ConvDeciBin.fxml" />
+                  <fx:include fx:id="HexaBox" source="Hexa.fxml" />
                </children></AnchorPane>
       </items>
     </SplitPane>
