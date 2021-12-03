@@ -55,13 +55,14 @@
               </font>
             </Label>
                   <Button fx:id="btnToBinaire" layoutX="26.0" layoutY="137.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Binaire" />
-                  <Button fx:id="btnDeciHexa" layoutX="24.0" layoutY="211.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Hexadécimal" />
+                  <Button fx:id="btnToHexa" layoutX="24.0" layoutY="211.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Hexadécimal" />
                   <Button fx:id="btnDeciChRom" layoutX="24.0" layoutY="287.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Chiffres Romains" />
           </children>
         </AnchorPane>
             <AnchorPane fx:id="anchorPaneRight">
                <children>
                   <fx:include fx:id="BinaryBox2" source="ConvDeciBin.fxml" />
+                  <fx:include fx:id="HexaBox" source="Hexa.fxml" />
                </children></AnchorPane>
       </items>
     </SplitPane>
