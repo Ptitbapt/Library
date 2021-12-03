@@ -17,48 +17,60 @@
         </HBox>
         <VBox layoutX="509.0" prefHeight="372.5" prefWidth="131.0">
             <children>
-                <VBox prefHeight="100.0" prefWidth="131.0">
+                  <Label prefHeight="17.0" prefWidth="128.0" text="Création d'un général :" />
+                <VBox fx:id="creatorMenu" prefHeight="100.0" prefWidth="131.0">
                     <children>
-                        <Label prefHeight="17.0" prefWidth="128.0" text="Création d'un général :" />
-                        <Label />
-                  <Label text="Grade :" />
-                        <TextField fx:id="grade" />
+                  <VBox fx:id="gradeZone" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                              <Label />
+                        <Label text="Grade :" />
+                              <TextField fx:id="grade" />
+                     </children>
+                  </VBox>
                     </children>
                 </VBox>
                 <VBox prefHeight="100.0" prefWidth="131.0">
                     <children>
-                        <Label prefHeight="17.0" prefWidth="131.0" text="Nom du général :" />
-                        <Label />
-                        <TextField fx:id="generalNom" />
+                  <VBox fx:id="nomZone" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                              <Label prefHeight="17.0" prefWidth="131.0" text="Nom :" />
+                              <Label />
+                              <TextField fx:id="nom" />
+                     </children>
+                  </VBox>
                     </children>
                 </VBox>
                 <VBox prefHeight="100.0" prefWidth="100.0">
                     <children>
-                        <Label prefHeight="17.0" prefWidth="131.0" text="VIe du soldat :" />
-                        <Label />
-                        <TextField fx:id="soldatVie" />
+                  <VBox fx:id="pvZone" prefHeight="0.0" prefWidth="131.0">
+                     <children>
+                              <Label prefHeight="17.0" prefWidth="131.0" text="Vie du soldat :" />
+                              <Label />
+                              <TextField fx:id="healthCharac" />
+                     </children>
+                  </VBox>
                     </children>
                 </VBox>
                 <VBox prefHeight="72.0" prefWidth="131.0">
                     <children>
-                        <Button fx:id="valider" mnemonicParsing="false" prefHeight="72.0" prefWidth="131.0" text="Valider" />
+                        <Button fx:id="validateBtn" mnemonicParsing="false" prefHeight="72.0" prefWidth="131.0" text="Valider" />
                     </children>
                 </VBox>
             </children>
         </VBox>
         <VBox layoutX="85.0" layoutY="300.0" prefHeight="73.0" prefWidth="116.0">
             <children>
-                <Button fx:id="creer" mnemonicParsing="false" prefHeight="71.0" prefWidth="116.0" text="Créer" />
+                <Button fx:id="btnCreate" mnemonicParsing="false" prefHeight="71.0" prefWidth="116.0" text="Créer" />
             </children>
         </VBox>
         <VBox layoutX="201.0" layoutY="300.0" prefHeight="73.0" prefWidth="116.0">
             <children>
-                <Button fx:id="modifier" mnemonicParsing="false" prefHeight="71.0" prefWidth="115.0" text="Modifier" />
+                <Button fx:id="btnModify" mnemonicParsing="false" prefHeight="71.0" prefWidth="115.0" text="Modifier" />
             </children>
         </VBox>
         <VBox layoutX="317.0" layoutY="300.0" prefHeight="73.0" prefWidth="116.0">
             <children>
-                <Button fx:id="supprimer" mnemonicParsing="false" prefHeight="71.0" prefWidth="115.0" text="Supprimer" />
+                <Button fx:id="btnDelete" mnemonicParsing="false" prefHeight="71.0" prefWidth="115.0" text="Supprimer" />
             </children>
         </VBox>
     </children>
