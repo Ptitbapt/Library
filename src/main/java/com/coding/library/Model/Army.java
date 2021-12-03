@@ -10,7 +10,7 @@ public class Army {
     @Override
     public String toString() {
         return "Army{" +
-                "name='" + name + '\'' +
+                "name='" + getName() + '\'' +
                 '}';
     }
 
