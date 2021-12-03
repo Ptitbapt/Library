@@ -20,8 +20,8 @@ public class General extends Army {
 
     @Override
     public String toString() {
-        return "General{" + "Nom" + getName() + "\n" +
-                "nbrDeSoldat='" + getNbrDeSoldat() + '\'' +
-                '}';
+        return "General : " + getName() +
+
+                "";
     }
 }
