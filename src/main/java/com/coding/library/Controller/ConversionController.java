@@ -22,7 +22,7 @@ public class ConversionController implements Initializable {
     @FXML
     private Button btnToRom;
     @FXML
-    private VBox BinaryBox2;
+    private AnchorPane BinaryBox2;
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
         anchorPaneRight.getChildren().removeAll(BinaryBox2);
