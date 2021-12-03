@@ -1,5 +1,7 @@
-package com.coding.library.controller;
+package com.coding.library.Controller;
 
+
+import com.coding.library.Model.Book;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -7,20 +9,32 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class BiblioController implements Initializable {
 
-    @FXML
-    private Button btnAjouter;
+
+
 
     @FXML
-    private Button btnSupprimer;
+    private TableView<Book> tbData;
 
     @FXML
-    private Button btnValider;
+    private TableColumn<Book, String> colTitre;
 
+    @FXML
+    private TableColumn<Book, String> colAuteur;
+
+    @FXML
+    private TableColumn<Book, Integer> colParution;
+
+    @FXML
+    private TableColumn<Book, Integer> colRange;
+
+    @FXML
+    private TableColumn<Book, String> colResume;
+
+    @FXML
+    private TableColumn<Book, Integer> colColonne;
     @FXML
     private TextField txtAuteur;
 
@@ -31,28 +45,6 @@ public class BiblioController implements Initializable {
     private TextField txtParution;
 
     @FXML
-    private TableView<TableUser> tableView;
-
-
-    @FXML
-    private TableColumn<TableUser, String> colonneAuteur;
-
-    @FXML
-    private TableColumn<TableUser, Integer> colonneColonne;
-
-    @FXML
-    private TableColumn<TableUser, Integer> colonneParution;
-
-    @FXML
-    private TableColumn<TableUser, Integer> colonneRangee;
-
-    @FXML
-    private TableColumn<TableUser, String> colonneResume;
-
-    @FXML
-    private TableColumn<TableUser, String> colonneTitre;
-
-    @FXML
     private TextField txtRangee;
 
     @FXML
@@ -61,27 +53,31 @@ public class BiblioController implements Initializable {
     @FXML
     private TextField txtTitre;
 
+    @FXML
+    private Button btnValiderBiblio;
 
-    ObservableList<TableUser> Tableau = FXCollections.observableArrayList(
-            new TableUser("Livre","Moi",1,1,13,"de la merde"),
-            new TableUser("Livre","Moi",1,1,13,"de la merde"),
-            new TableUser("Livre","Moi",1,1,13,"de la merde"),
-            new TableUser("Livre","Moi",1,1,13,"de la merde")
-    );
+
+
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        colonneTitre.setCellValueFactory(new PropertyValueFactory<TableUser, String>("Titre"));
-        colonneAuteur.setCellValueFactory(new PropertyValueFactory<TableUser, String>("Auteur"));
-        colonneColonne.setCellValueFactory(new PropertyValueFactory<TableUser, Integer>("Colonne"));
-        colonneRangee.setCellValueFactory(new PropertyValueFactory<TableUser, Integer>("Rangee"));
-        colonneParution.setCellValueFactory(new PropertyValueFactory<TableUser, Integer>("Parution"));
-        colonneResume.setCellValueFactory(new PropertyValueFactory<TableUser, String>("Resume"));
+    public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
 
-        tableView.setItems(Tableau);
+        colTitre.setCellValueFactory(new PropertyValueFactory<>("Titre"));
+        colAuteur.setCellValueFactory(new PropertyValueFactory<>("Auteur"));
+        colColonne.setCellValueFactory(new PropertyValueFactory<>("Colonne"));
+        colRange.setCellValueFactory(new PropertyValueFactory<>("Rangee"));
+        colParution.setCellValueFactory(new PropertyValueFactory<>("Parution"));
+        colResume.setCellValueFactory(new PropertyValueFactory<>("Resume"));
+        tbData.setItems(books);
+
+        btnValiderBiblio.setOnAction(event -> {
+            books.add(new Book(txtTitre.getText(),txtAuteur.getText(),Integer.parseInt(txtColonne.getText()),Integer.parseInt(txtRangee.getText()),Integer.parseInt(txtParution.getText()),txtResume.getText()));
+        });
 
     }
-
+    private ObservableList<Book> books = FXCollections.observableArrayList(
+            new Book("Titre 1", "Auteur 1", 1, 1, 1, "Resume 1")
+    );
 
 }
 
