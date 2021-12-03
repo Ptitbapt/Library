@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 
 public class BiblioController implements Initializable {
@@ -56,11 +58,24 @@ public class BiblioController implements Initializable {
     @FXML
     private Button btnValiderBiblio;
 
+    @FXML
+    private Button btnAjouter;
+
+    @FXML
+    private VBox nomCase;
+
+    @FXML
+    private VBox colonneText;
+
+    @FXML
+    private HBox hboxContainer;
 
 
 
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
+        hboxContainer.getChildren().removeAll(nomCase,colonneText);
+
 
         colTitre.setCellValueFactory(new PropertyValueFactory<>("Titre"));
         colAuteur.setCellValueFactory(new PropertyValueFactory<>("Auteur"));
@@ -72,12 +87,23 @@ public class BiblioController implements Initializable {
 
         btnValiderBiblio.setOnAction(event -> {
             books.add(new Book(txtTitre.getText(),txtAuteur.getText(),Integer.parseInt(txtColonne.getText()),Integer.parseInt(txtRangee.getText()),Integer.parseInt(txtParution.getText()),txtResume.getText()));
+            hboxContainer.getChildren().removeAll(nomCase,colonneText);
+            txtTitre.clear();
+            txtAuteur.clear();
+            txtColonne.clear();
+            txtRangee.clear();
+            txtParution.clear();
+            txtResume.clear();
+        });
+        btnAjouter.setOnAction(event -> {
+            hboxContainer.getChildren().addAll(nomCase,colonneText);
         });
 
     }
     private ObservableList<Book> books = FXCollections.observableArrayList(
-            new Book("Titre 1", "Auteur 1", 1, 1, 1, "Resume 1")
+            new Book("Titre 1", "Auteur 1", 1, 1, 2021, "Resume 1")
     );
+
 
 }
 

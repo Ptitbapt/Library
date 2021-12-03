@@ -48,7 +48,7 @@
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="260.0" prefWidth="639.0" VBox.vgrow="ALWAYS">
          <children>
             <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" />
-            <HBox prefHeight="373.0" prefWidth="650.0">
+            <HBox fx:id="hboxContainer" prefHeight="373.0" prefWidth="650.0">
                <children>
                   <VBox prefHeight="260.0" prefWidth="450.0">
                      <children>
@@ -78,7 +78,7 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <VBox prefHeight="260.0" prefWidth="100.0">
+                  <VBox fx:id="nomCase" prefHeight="260.0" prefWidth="100.0">
                      <children>
                         <Label prefHeight="26.0" prefWidth="100.0" text="Titre :" textAlignment="RIGHT" underline="true">
                            <font>
@@ -112,7 +112,7 @@
                         </Label>
                      </children>
                   </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
+                  <VBox fx:id="colonneText" prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <TextField fx:id="txtTitre" />
                         <TextField fx:id="txtAuteur" />

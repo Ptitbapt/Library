@@ -65,6 +65,7 @@
                   <fx:include fx:id="BinaryBox2" source="ConvDeciBin.fxml" />
                   <fx:include fx:id="HexaBox" source="Hexa.fxml" />
                   <fx:include fx:id="imcBox" source="IMC.fxml" />
+                  <fx:include fx:id="RomainBox" source="Romain.fxml" />
                </children></AnchorPane>
       </items>
     </SplitPane>

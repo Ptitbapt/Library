@@ -31,21 +31,31 @@ public class ConversionController implements Initializable {
 
     @FXML
     private HBox HexaBox;
+
+    @FXML
+    private Button btnDeciChRom;
+
+    @FXML
+    private VBox RomainBox;
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
-        anchorPaneRight.getChildren().removeAll(BinaryBox2,HexaBox,imcBox);
+        anchorPaneRight.getChildren().removeAll(BinaryBox2,HexaBox,imcBox,RomainBox);
 
         btnToBinaire.setOnAction(event -> {
-            anchorPaneRight.getChildren().removeAll(HexaBox,imcBox);
+            anchorPaneRight.getChildren().removeAll(HexaBox,imcBox,RomainBox);
             anchorPaneRight.getChildren().add(BinaryBox2);
         });
         btnToHexa.setOnAction(event -> {
-            anchorPaneRight.getChildren().removeAll(BinaryBox2,imcBox);
+            anchorPaneRight.getChildren().removeAll(BinaryBox2,imcBox,RomainBox);
             anchorPaneRight.getChildren().add(HexaBox);
         });
         btnIMC.setOnAction(event -> {
-            anchorPaneRight.getChildren().removeAll(BinaryBox2,HexaBox);
+            anchorPaneRight.getChildren().removeAll(BinaryBox2,HexaBox,RomainBox);
             anchorPaneRight.getChildren().add(imcBox);
+        });
+        btnDeciChRom.setOnAction(event -> {
+            anchorPaneRight.getChildren().removeAll(BinaryBox2,HexaBox,imcBox);
+            anchorPaneRight.getChildren().add(RomainBox);
         });
 
 
