@@ -18,7 +18,7 @@
         <VBox layoutX="509.0" prefHeight="372.5" prefWidth="131.0">
             <children>
                   <Label prefHeight="17.0" prefWidth="128.0" text="Création d'un général :" />
-                <VBox fx:id="creatorMenu" prefHeight="100.0" prefWidth="131.0">
+                <VBox prefHeight="100.0" prefWidth="131.0">
                     <children>
                   <VBox fx:id="gradeZone" prefHeight="200.0" prefWidth="100.0">
                      <children>
@@ -44,16 +44,16 @@
                     <children>
                   <VBox fx:id="pvZone" prefHeight="0.0" prefWidth="131.0">
                      <children>
-                              <Label prefHeight="17.0" prefWidth="131.0" text="Vie du soldat :" />
+                              <Label prefHeight="17.0" prefWidth="131.0" text="VIe du soldat :" />
                               <Label />
-                              <TextField fx:id="healthCharac" />
+                              <TextField fx:id="soldatVie" />
                      </children>
                   </VBox>
                     </children>
                 </VBox>
                 <VBox prefHeight="72.0" prefWidth="131.0">
                     <children>
-                        <Button fx:id="validateBtn" mnemonicParsing="false" prefHeight="72.0" prefWidth="131.0" text="Valider" />
+                        <Button fx:id="valider" mnemonicParsing="false" prefHeight="72.0" prefWidth="131.0" text="Valider" />
                     </children>
                 </VBox>
             </children>
