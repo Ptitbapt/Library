@@ -76,7 +76,7 @@
             <MenuItem mnemonicParsing="false" text="Unselect All" />
           </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Navigation">
+        <Menu mnemonicParsing="false" text="Help">
           <items>
             <MenuItem fx:id="menuItemConv" mnemonicParsing="false" text="Menu Conversion" />
                   <MenuItem fx:id="menuItemBiblio" mnemonicParsing="false" text="Menu Bibliothèque" />

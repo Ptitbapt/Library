@@ -24,22 +24,30 @@ public class ConversionController implements Initializable {
     private Button btnToRom;
     @FXML
     private AnchorPane BinaryBox2;
+    @FXML
+    private HBox imcBox;
+    @FXML
+    private Button btnIMC;
 
     @FXML
     private HBox HexaBox;
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
-        anchorPaneRight.getChildren().removeAll(BinaryBox2,HexaBox);
+        anchorPaneRight.getChildren().removeAll(BinaryBox2,HexaBox,imcBox);
 
         btnToBinaire.setOnAction(event -> {
-            anchorPaneRight.getChildren().removeAll(HexaBox);
+            anchorPaneRight.getChildren().removeAll(HexaBox,imcBox);
             anchorPaneRight.getChildren().add(BinaryBox2);
         });
         btnToHexa.setOnAction(event -> {
-            anchorPaneRight.getChildren().removeAll(BinaryBox2);
+            anchorPaneRight.getChildren().removeAll(BinaryBox2,imcBox);
             anchorPaneRight.getChildren().add(HexaBox);
-
         });
+        btnIMC.setOnAction(event -> {
+            anchorPaneRight.getChildren().removeAll(BinaryBox2,HexaBox);
+            anchorPaneRight.getChildren().add(imcBox);
+        });
+
 
     }
 }
