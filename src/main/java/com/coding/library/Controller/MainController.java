@@ -60,6 +60,7 @@ public class MainController implements Initializable {
     private Button btnQuit;
 
 
+    
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
         menuApp.getChildren().removeAll( menuBiblio, menuConversion);
