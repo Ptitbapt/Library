@@ -59,17 +59,20 @@ public class MainController implements Initializable {
     @FXML
     private Button btnQuit;
 
+    @FXML
+    private AnchorPane MenuArmyBox;
+
 
     
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
-        menuApp.getChildren().removeAll( menuBiblio, menuConversion);
+        menuApp.getChildren().removeAll( menuBiblio, menuConversion , MenuArmyBox);
 
-        btnLibrary.setOnAction(event -> {
+        btnBiblio.setOnAction(event -> {
             menuApp.getChildren().add(menuBiblio);
             menuApp.getChildren().remove(mainMenu);
         });
-        menuItemConv.setOnAction(event -> {
+        btnConv.setOnAction(event -> {
             menuApp.getChildren().removeAll(menuBiblio,mainMenu);
             menuApp.getChildren().add(menuConversion);
         });
@@ -84,6 +87,11 @@ public class MainController implements Initializable {
         menuItemBiblio.setOnAction(event -> {
             menuApp.getChildren().removeAll(menuConversion, mainMenu);
             menuApp.getChildren().add(menuBiblio);
+        });
+
+        menuItemConv.setOnAction(event -> {
+            menuApp.getChildren().removeAll(mainMenu, menuBiblio);
+            menuApp.getChildren().add(menuConversion);
         });
         itemQuit.setOnAction(event -> {
             System.exit(0);
