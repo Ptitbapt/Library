@@ -4,17 +4,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
 
 public class ConverterController implements Initializable {
     @FXML
-    private TextField txtBinaire;
+    private TextArea txtBinaire;
 
     @FXML
-    private TextField txtDecimal;
+    private TextArea txtDecimal;
 
+    @FXML
+    private Button btnDelete;
 
     public String convertDecimalToBinary(int num) {
         ArrayList<String> list = new ArrayList<>();
@@ -61,6 +62,10 @@ public class ConverterController implements Initializable {
             txtDecimal.setText(String.valueOf(convertBinaryToDecimal(binaire)));
         });
 
+        btnDelete.setOnMouseClicked(event -> {
+            txtBinaire.setText("");
+            txtDecimal.setText("");
+        });
     }
 
 }

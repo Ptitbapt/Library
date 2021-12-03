@@ -5,10 +5,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="aPaneConvDeciBin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.library.Controller.ConverterController">
+
+<AnchorPane fx:id="aPaneConvDeciBin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="txtDecimal" layoutX="92.0" layoutY="230.0" />
-      <TextField fx:id="txtBinaire" layoutX="396.0" layoutY="230.0" />
+      <TextField layoutX="92.0" layoutY="230.0" />
+      <TextField layoutX="396.0" layoutY="230.0" />
       <Label layoutX="171.0" layoutY="70.0" prefHeight="50.0" prefWidth="328.0" text="Conversion Décimal - Binaire" textAlignment="CENTER">
          <font>
             <Font name="Arial Rounded MT Bold" size="23.0" />

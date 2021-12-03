@@ -42,7 +42,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.library.Controller.MainController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.library.Controller.MainController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -76,49 +76,36 @@
             <MenuItem mnemonicParsing="false" text="Unselect All" />
           </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Help">
+        <Menu mnemonicParsing="false" text="Navigation">
           <items>
+                  <MenuItem fx:id="menuItemMain" mnemonicParsing="false" text="Main Menu" />
             <MenuItem fx:id="menuItemConv" mnemonicParsing="false" text="Menu Conversion" />
                   <MenuItem fx:id="menuItemBiblio" mnemonicParsing="false" text="Menu Bibliothèque" />
-                  <MenuItem fx:id="menuItemMain" mnemonicParsing="false" text="Main Menu" />
           </items>
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane fx:id="aPaneApp" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" stylesheets="@style.css" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <VBox fx:id="menuApp" alignment="CENTER" prefHeight="373.0" prefWidth="640.0">
+            <VBox fx:id="menuApp" alignment="CENTER" prefHeight="373.0" prefWidth="640.0" spacing="15.0">
                <children>
-                  <VBox fx:id="mainMenu" alignment="CENTER" fillWidth="false" prefHeight="373.0" prefWidth="640.0" spacing="15.0">
+                  <VBox fx:id="mainMenu" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                    <Label alignment="CENTER" prefHeight="23.0" prefWidth="319.0" style="&#10;" text="Bievenue sur notre application !" textAlignment="CENTER" textFill="WHITE">
+                    <Label alignment="CENTER" prefHeight="23.0" prefWidth="274.0" style="&#10;" text="Bievenue sur notre application !" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
                       <font>
-                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                        <Font size="18.0" />
                       </font>
                     </Label>
-                        <Label alignment="CENTER" prefHeight="23.0" prefWidth="274.0" style="&#10;" text="Que voulez vous faire ?" textAlignment="CENTER" textFill="WHITE" wrapText="false">
+                        <Label alignment="CENTER" prefHeight="23.0" prefWidth="274.0" style="&#10;" text="Que voulez vous faire ?" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
                            <font>
-                              <Font name="Arial Bold Italic" size="18.0" />
+                              <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="btnBiblio" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" stylesheets="@style.css" text="Bibliothèque" textFill="#d02424">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="13.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="btnConv" minHeight="50.0" mnemonicParsing="false" prefWidth="130.0" text="Conversions">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="13.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="btnQuit" minHeight="50.0" mnemonicParsing="false" prefWidth="130.0" text="Quitter">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="13.0" />
-                           </font>
-                        </Button>
+                        <Button fx:id="btnLibrary" minHeight="50.0" mnemonicParsing="false" prefWidth="100.0" text="Bibliothèque" />
+                        <Button fx:id="btnConv" minHeight="50.0" mnemonicParsing="false" prefWidth="100.0" text="Conversions" />
+                        <Button fx:id="btnQuit" minHeight="50.0" mnemonicParsing="false" prefWidth="100.0" text="Quitter" />
                      </children>
                   </VBox>
-                  <fx:include fx:id="MenuArmyBox" source="MenuArmy.fxml" />
                   <fx:include fx:id="menuBiblio" source="MenuBiblio.fxml" />
                   <fx:include fx:id="menuConversion" source="MenuConversions.fxml" />
                </children>

@@ -35,6 +35,11 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -43,26 +48,66 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vboxMenuConv" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.library.Controller.ConversionController">
+<VBox fx:id="vboxMenuConv" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <SplitPane fx:id="containerAll" dividerPositions="0.5" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
-        <AnchorPane fx:id="anchorPaneLeft">
+        <AnchorPane fx:id="aPaneMenuConv">
           <children>
             <Label alignment="CENTER" layoutX="10.0" layoutY="68.0" minWidth="60.0" prefHeight="66.0" prefWidth="207.0" style="&#10;" text="Conversions :" textAlignment="CENTER" textFill="WHITE" wrapText="false">
               <font>
                 <Font name="Arial Rounded MT Bold" size="18.0" fx:id="x1" />
               </font>
             </Label>
-                  <Button fx:id="btnToBinaire" layoutX="26.0" layoutY="137.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Binaire" />
+                  <Button fx:id="btnDeciBin" layoutX="26.0" layoutY="137.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Binaire" />
                   <Button fx:id="btnDeciHexa" layoutX="24.0" layoutY="211.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Hexadécimal" />
                   <Button fx:id="btnDeciChRom" layoutX="24.0" layoutY="287.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Chiffres Romains" />
           </children>
         </AnchorPane>
-            <AnchorPane fx:id="anchorPaneRight">
-               <children>
-                  <fx:include fx:id="BinaryBox2" source="ConvDeciBin.fxml" />
-               </children></AnchorPane>
+        <ScrollPane fx:id="scrollPaneCenterConv" prefHeight="-1.0" prefWidth="-1.0">
+          <content>
+            <AnchorPane id="Content" fx:id="aPaneCenterConv" minHeight="-1.0" minWidth="-1.0" prefHeight="550.0" prefWidth="669.0" />
+          </content>
+        </ScrollPane>
       </items>
     </SplitPane>
     <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">

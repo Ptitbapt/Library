@@ -43,26 +43,30 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vboxMenuConv" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.library.Controller.ConversionController">
+<VBox fillWidth="false" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.library.Controller.ConversionController">
   <children>
     <SplitPane fx:id="containerAll" dividerPositions="0.5" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
         <AnchorPane fx:id="anchorPaneLeft">
           <children>
-            <Label alignment="CENTER" layoutX="10.0" layoutY="68.0" minWidth="60.0" prefHeight="66.0" prefWidth="207.0" style="&#10;" text="Conversions :" textAlignment="CENTER" textFill="WHITE" wrapText="false">
+            <Label alignment="CENTER" layoutX="10.0" layoutY="68.0" minWidth="60.0" prefHeight="66.0" prefWidth="207.0" style="&#10;" text="Que voulez vous convertir ?" textAlignment="CENTER" wrapText="false">
               <font>
-                <Font name="Arial Rounded MT Bold" size="18.0" fx:id="x1" />
+                <Font size="18.0" fx:id="x1" />
               </font>
+              <textFill>
+                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+              </textFill>
             </Label>
-                  <Button fx:id="btnToBinaire" layoutX="26.0" layoutY="137.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Binaire" />
-                  <Button fx:id="btnDeciHexa" layoutX="24.0" layoutY="211.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Hexadécimal" />
-                  <Button fx:id="btnDeciChRom" layoutX="24.0" layoutY="287.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Chiffres Romains" />
+                  <Button fx:id="btnToBinaire" layoutX="41.0" layoutY="137.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Décimal - Binaire" />
+                  <Button fx:id="btnToHexa" layoutX="41.0" layoutY="214.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Décimal - Hexadécimal" />
+                  <Button fx:id="btnToRom" layoutX="23.0" layoutY="294.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" text="Décimal - Chiffres Romains" />
           </children>
         </AnchorPane>
-            <AnchorPane fx:id="anchorPaneRight">
+            <AnchorPane fx:id="anchorPaneRight" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <fx:include fx:id="BinaryBox2" source="ConvDeciBin.fxml" />
-               </children></AnchorPane>
+                  <fx:include fx:id="BinaryBox2" source="DecimalToBinary.fxml" />
+               </children>
+            </AnchorPane>
       </items>
     </SplitPane>
     <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
