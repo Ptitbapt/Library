@@ -3,20 +3,20 @@ package com.coding.library.Model;
 public class Soldier extends Army {
 
     private String grade;
-    private int pv;
+    private int health;
 
     public Soldier(String name, String grade, int pv) {
         super(name);
         this.grade = grade;
-        this.pv = pv;
+        this.health = health;
     }
 
-    public int getPv() {
-        return pv;
+    public int getHealth() {
+        return health;
     }
 
-    public void setPv(int pv) {
-        this.pv = pv;
+    public void setHealth(int health) {
+        this.health = health;
     }
 
 
@@ -31,10 +31,8 @@ public class Soldier extends Army {
 
     @Override
     public String toString() {
-        return "Soldier{" +
-                "Nom" + getName() + "\n" +
-                "grade='" + getGrade() + '\'' +
-                ", pv=" + getPv() +
-                '}';
+        return "Soldier : " + getName() + " = health : " + getHealth() +
+
+                "";
     }
 }
