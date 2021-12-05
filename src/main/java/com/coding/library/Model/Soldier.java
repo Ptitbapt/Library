@@ -31,7 +31,7 @@ public class Soldier extends Army {
 
     @Override
     public String toString() {
-        return "Soldier : " + getName() + " = health : " + getHealth() +
+        return "Soldier : " + getName() +
 
                 "";
     }

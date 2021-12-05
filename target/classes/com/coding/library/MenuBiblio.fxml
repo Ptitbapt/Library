@@ -80,32 +80,32 @@
                   </VBox>
                   <VBox fx:id="nomCase" prefHeight="260.0" prefWidth="100.0">
                      <children>
-                        <Label prefHeight="26.0" prefWidth="100.0" text="Titre :" textAlignment="RIGHT" underline="true">
+                        <Label prefHeight="26.0" prefWidth="100.0" text="Titre :" textAlignment="RIGHT" textFill="WHITE" underline="true">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="26.0" prefWidth="101.0" text="Auteur :" textAlignment="RIGHT" textFill="WHITE" underline="true">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="26.0" prefWidth="101.0" text="Auteur :" textAlignment="RIGHT" underline="true">
+                        <Label text="Colonne :" textAlignment="RIGHT" textFill="WHITE" underline="true">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label text="Colonne :" textAlignment="RIGHT" underline="true">
+                        <Label text="Rangée :" textAlignment="RIGHT" textFill="WHITE" underline="true">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label text="Rangée :" textAlignment="RIGHT" underline="true">
+                        <Label text="Parution :" textAlignment="RIGHT" textFill="WHITE" underline="true">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label text="Parution :" textAlignment="RIGHT" underline="true">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label text="Résumé :" textAlignment="RIGHT" underline="true">
+                        <Label text="Résumé :" textAlignment="RIGHT" textFill="WHITE" underline="true">
                            <font>
                               <Font size="20.0" />
                            </font>

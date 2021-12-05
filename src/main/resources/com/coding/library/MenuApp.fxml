@@ -81,6 +81,7 @@
             <MenuItem fx:id="menuItemConv" mnemonicParsing="false" text="Menu Conversion" />
                   <MenuItem fx:id="menuItemBiblio" mnemonicParsing="false" text="Menu Bibliothèque" />
                   <MenuItem fx:id="menuItemMain" mnemonicParsing="false" text="Main Menu" />
+                  <MenuItem fx:id="armyButton" mnemonicParsing="false" text="Menu Army" />
           </items>
         </Menu>
       </menus>
@@ -118,9 +119,9 @@
                         </Button>
                      </children>
                   </VBox>
-                  <fx:include fx:id="MenuArmyBox" source="MenuArmy.fxml" />
                   <fx:include fx:id="menuBiblio" source="MenuBiblio.fxml" />
                   <fx:include fx:id="menuConversion" source="MenuConversions.fxml" />
+                  <fx:include fx:id="armyBox" source="Armies.fxml" />
                </children>
             </VBox>
       </children>

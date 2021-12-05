@@ -62,43 +62,54 @@ public class MainController implements Initializable {
     @FXML
     private AnchorPane MenuArmyBox;
 
+    @FXML
+    private VBox armyBox;
+
+    @FXML
+    private MenuItem armyButton;
+
 
     
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
-        menuApp.getChildren().removeAll( menuBiblio, menuConversion , MenuArmyBox);
+        menuApp.getChildren().removeAll( menuBiblio, menuConversion , MenuArmyBox, armyBox);             //remove toute les vbox inutiles
 
         btnBiblio.setOnAction(event -> {
-            menuApp.getChildren().add(menuBiblio);
-            menuApp.getChildren().remove(mainMenu);
+            menuApp.getChildren().add(menuBiblio);                                              //ajoute la vbox de biblio quand on appuie sur le bouton biblio
+            menuApp.getChildren().remove(mainMenu);                                             //enleve la vbox de menu principal quand on appuie sur le bouton biblio
         });
         btnConv.setOnAction(event -> {
-            menuApp.getChildren().removeAll(menuBiblio,mainMenu);
-            menuApp.getChildren().add(menuConversion);
+            menuApp.getChildren().removeAll(menuBiblio,mainMenu,armyBox);                               //enleve les vbox de biblio et de menu principal quand on appuie sur le bouton conversion
+            menuApp.getChildren().add(menuConversion);                                          //ajoute la vbox de conversion quand on appuie sur le bouton conversion
         });
         btnConv.setOnAction(event -> {
-            menuApp.getChildren().removeAll(mainMenu, menuBiblio);
-            menuApp.getChildren().add(menuConversion);
+            menuApp.getChildren().removeAll(mainMenu, menuBiblio,armyBox);                              //enleve les vbox de menu principal et de biblio quand on appuie sur le bouton conversion
+            menuApp.getChildren().add(menuConversion);                                          //ajoute la vbox de conversion quand on appuie sur le bouton conversion
         });
         menuItemMain.setOnAction(event -> {
-            menuApp.getChildren().removeAll(menuConversion, menuBiblio);
-            menuApp.getChildren().add(mainMenu);
+            menuApp.getChildren().removeAll(menuConversion, menuBiblio,armyBox);                        //enleve les vbox de conversion et de biblio quand on appuie sur le menu principal
+            menuApp.getChildren().add(mainMenu);                                                //ajoute la vbox de menu principal quand on appuie sur le menu principal
         });
         menuItemBiblio.setOnAction(event -> {
-            menuApp.getChildren().removeAll(menuConversion, mainMenu);
-            menuApp.getChildren().add(menuBiblio);
+            menuApp.getChildren().removeAll(menuConversion, mainMenu,armyBox);                          //enleve les vbox de conversion et de menu principal quand on appuie sur le menu biblio
+            menuApp.getChildren().add(menuBiblio);                                              //ajoute la vbox de biblio quand on appuie sur le menu biblio
         });
 
         menuItemConv.setOnAction(event -> {
-            menuApp.getChildren().removeAll(mainMenu, menuBiblio);
-            menuApp.getChildren().add(menuConversion);
+            menuApp.getChildren().removeAll(mainMenu, menuBiblio,armyBox);                             //enleve les vbox de menu principal et de biblio quand on appuie sur le menu conversion
+            menuApp.getChildren().add(menuConversion);                                          //ajoute la vbox de conversion quand on appuie sur le menu conversion
         });
         itemQuit.setOnAction(event -> {
-            System.exit(0);
+            System.exit(0);                                                              //quitte l'application quand on appuie sur le menu quitter
         });
         btnQuit.setOnAction(event -> {
-            System.exit(0);
+            System.exit(0);                                                             //quitte l'application quand on appuie sur le bouton quitter
         });
+        armyButton.setOnAction(event -> {
+            menuApp.getChildren().removeAll(mainMenu, menuBiblio,menuConversion);               //enleve les vbox de menu principal et de biblio quand on appuie sur le menu army
+            menuApp.getChildren().addAll(armyBox);                                              //ajoute la vbox de army quand on appuie sur le menu army
+        });
+
 
     }
 }

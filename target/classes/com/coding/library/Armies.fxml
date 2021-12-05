@@ -14,20 +14,20 @@
                 <TreeView fx:id="treeView" prefHeight="477.0" prefWidth="739.0" />
                 <VBox fx:id="creatorMenu" alignment="CENTER" prefHeight="477.0" prefWidth="127.0">
                     <children>
-                        <Label fx:id="labelCreator" prefHeight="35.0" prefWidth="148.0" text="Create your general" />
+                        <Label fx:id="labelCreator" prefHeight="35.0" prefWidth="148.0" text="Create your general" textFill="WHITE" />
                         <VBox alignment="CENTER" prefHeight="478.0" prefWidth="235.0">
                             <children>
-                                <Label text="Name" />
+                                <Label text="Name" textFill="WHITE" />
                                 <TextField fx:id="nameCharacter" />
                             </children>
                         </VBox>
                         <VBox fx:id="healthField" alignment="CENTER" prefHeight="478.0" prefWidth="113.0">
                             <children>
-                                <Label text="Health" />
+                                <Label text="Health" textFill="WHITE" />
                                 <TextField fx:id="healthCharacter" />
                             </children>
                         </VBox>
-                        <Label fx:id="nbrSoldiers" text="Nombre de soldats : 0" />
+                        <Label fx:id="nbrSoldiers" text="Nombre de soldats : 0" textFill="WHITE" />
                         <VBox alignment="CENTER" prefHeight="478.0" prefWidth="143.0">
                             <children>
                                 <Button fx:id="validateBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Valider" />

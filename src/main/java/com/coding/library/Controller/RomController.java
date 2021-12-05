@@ -30,19 +30,13 @@ public class RomController implements Initializable {
         });
 
         txtRomain.setOnKeyReleased(event -> {
-                if (!Objects.equals(txtRomain.getText(), "") && txtRomain.getText().length() <= 3999) {
-                   RomToDec romanToDecimal = new RomToDec(txtRomain.getText());
+                if (!Objects.equals(txtRomain.getText(), "") && txtRomain.getText().length() <= 3999) {         //si le nombre de caractère est inférieur à 3999
+                   RomToDec romanToDecimal = new RomToDec(txtRomain.getText());                                    //on crée un objet RomToDec
+                  txtDecimal.setText(String.valueOf(romanToDecimal.result()));                                    //le résultat est fait en fonction de la valeur dans txtDecimal
 
-                  txtDecimal.setText(String.valueOf(romanToDecimal.result()));
-
-
-              //  }
-                  //  if (!txtRomain.contains("IIII") && !txtRomain.contains("VVVV") && !txtRomain.contains("XXXX") && !txtRomain.contains("LLLL") && !txtRomain.contains("CCCC") && !txtRomain.contains("DDDD") && !txtRomain.contains("MMMM") && !txtRomain.contains("VX") && !txtRomain.contains("VL") && !txtRomain.contains("VC") && !txtRomain.contains("VD") && !txtRomain.contains("VM") && !txtRomain.contains("LC") && !txtRomain.contains("LD") && !txtRomain.contains("LM") && !txtRomain.contains("XD") && !txtRomain.contains("DM") && !txtRomain.contains("IL") && !txtRomain.contains("IC") && !txtRomain.contains("ID") && !txtRomain.contains("IM") && !txtRomain.contains("XM") && !txtRomain.contains("XCX") && !txtRomain.contains("XMX") && !txtRomain.contains("XDX") && (txtRomain.contains("I") || txtRomain.contains("V")|| txtRomain.contains("X")|| txtRomain.contains("L")|| txtRomain.contains("C")|| txtRomain.contains("D")|| txtRomain.contains("M"))) {
-
-                    // }
 
                          } else {
-                            txtDecimal.setText("");
+                            txtDecimal.setText("Cant convert");
                         }
 
 

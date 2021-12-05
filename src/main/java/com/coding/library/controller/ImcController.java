@@ -33,10 +33,13 @@ import java.util.ResourceBundle;
             @Override
             public void initialize(URL url, ResourceBundle resourceBundle) {
                 btnValiderIMC.setOnMouseClicked(btnConvertisseurAction -> {
+                    //transform txtPoids into int
                     int poids = Integer.parseInt(txtPoids.getText());
+                    //transform txtPoids into double
                     double taille = Double.parseDouble(txtTaille.getText());
-
+                    //calculation of the imc
                     double imc = poids / (taille * taille);
+                    //puts a limit to the number in imc
                     txtImc.setText(String.valueOf(Math.round(imc * 100.0)/100.0));
 
                     if (imc < 18.4) {

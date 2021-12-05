@@ -55,55 +55,33 @@ public class ArmyTreeViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        // Create a rot for our tree and set it
-
-        TreeItem<String> rootItem = new TreeItem<>("Army");
+        TreeItem<String> rootItem = new TreeItem<>("Army"); // Create a root for our tree and set it
         treeView.setRoot(rootItem);
 
-        // Sysout that there was no problem in the creation of our root (and our tree)
+        System.out.println("Root instanciÃ©e"); // Print that there was no problem in the creation of our root (and our tree)
 
-        System.out.println("Root instanciÃ©e");
-
-        // Remove the menu to get it only when we want to get it
-
-        treeViewPrinter.getChildren().removeAll(creatorMenu);
+        treeViewPrinter.getChildren().removeAll(creatorMenu);   // Remove the menu to get it only when we want to get it
 
         // When we click on our button Creator
 
-        btnCreate.setOnMouseClicked(createWindow -> {
+        btnCreate.setOnMouseClicked(createWindow -> {   // Check if our div contains our menu of creation
 
-            // Check if our div contains our menu of creation
+            if (!treeViewPrinter.getChildren().contains(creatorMenu)) { // If it doesn't then get the value of the Item that we clicked on
 
-            if (!treeViewPrinter.getChildren().contains(creatorMenu)) {
-
-                // If it doesn't then get the value of the Item that we clicked on
-
-                if (treeView.getSelectionModel().getSelectedItem().getValue() == "Army") {
-
-                    // If it contains "Army"
-
-                    // Open the menu to create a General
+                if (treeView.getSelectionModel().getSelectedItem().getValue() == "Army") {  // If it contains "Army" open the menu to create a General
 
                     labelCreator.setText("Create your General");
 
-                    // Health isn't necessary for a general so hide the field corresponding to health
+                    healthField.setVisible(false);  // We don't need health for the general so we hide it
 
-                    healthField.setVisible(false);
+                } else if (treeView.getSelectionModel().getSelectedItem().getValue().contains("General")) { // But if it contains "General" (that means that a general exist and that we clicked on)
 
-                } else if (treeView.getSelectionModel().getSelectedItem().getValue().contains("General")) {
+                    labelCreator.setText("Create your Soldier"); // Print "Create your Soldier"
 
-                    // But if it contains "General" (that means that a general exist and that we clicked on)
-
-                    // Print that we want to create a soldier
-                    labelCreator.setText("Create your Soldier");
-
-                    // Show the health field
 
                     healthField.setVisible(true);
 
                 }
-
-                // Anyway , print the menu of Creation
 
                 treeViewPrinter.getChildren().addAll(creatorMenu);
             }
@@ -113,13 +91,7 @@ public class ArmyTreeViewController implements Initializable {
 
         validateBtn.setOnMouseClicked(createArmy -> {
 
-            //Check if we click on a general
-
-            if (treeView.getSelectionModel().getSelectedItem().getValue().contains("General")) {
-
-                // Creation of a soldier
-
-                // If we do then save into variables Name, Grade & Health of our soldier
+            if (treeView.getSelectionModel().getSelectedItem().getValue().contains("General")) {    //Check if we clicked on a general
 
                 String nameS = nameCharacter.getText();
                 String gradeS = "Soldier";

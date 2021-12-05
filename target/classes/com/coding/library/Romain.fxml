@@ -5,16 +5,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.library.Controller.RomController">
+<VBox fx:id="boxRomDec" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.library.Controller.RomController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
             <TextField fx:id="txtDecimal" layoutX="93.0" layoutY="175.0" />
             <TextField fx:id="txtRomain" layoutX="346.0" layoutY="175.0" />
-            <Label layoutX="285.0" layoutY="180.0" text="&lt;==&gt;" />
-            <Label layoutX="150.0" layoutY="158.0" text="Decimal" />
-            <Label layoutX="405.0" layoutY="158.0" text="Romain" />
+            <Label layoutX="285.0" layoutY="180.0" text="&lt;==&gt;" textFill="WHITE" />
+            <Label layoutX="150.0" layoutY="158.0" text="Decimal" textFill="WHITE" />
+            <Label layoutX="405.0" layoutY="158.0" text="Romain" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

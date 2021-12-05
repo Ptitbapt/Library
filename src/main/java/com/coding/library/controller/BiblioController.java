@@ -70,14 +70,17 @@ public class BiblioController implements Initializable {
     @FXML
     private HBox hboxContainer;
 
+    @FXML
+    private Button btnSupprimer;
+
 
 
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
-        hboxContainer.getChildren().removeAll(nomCase,colonneText);
+        hboxContainer.getChildren().removeAll(nomCase,colonneText); // on supprime les vbox qui ne sont pas utiles
 
 
-        colTitre.setCellValueFactory(new PropertyValueFactory<>("Titre"));
+        colTitre.setCellValueFactory(new PropertyValueFactory<>("Titre")); // on associe les colonnes avec les attributs de la classe
         colAuteur.setCellValueFactory(new PropertyValueFactory<>("Auteur"));
         colColonne.setCellValueFactory(new PropertyValueFactory<>("Colonne"));
         colRange.setCellValueFactory(new PropertyValueFactory<>("Rangee"));
@@ -86,22 +89,26 @@ public class BiblioController implements Initializable {
         tbData.setItems(books);
 
         btnValiderBiblio.setOnAction(event -> {
-            books.add(new Book(txtTitre.getText(),txtAuteur.getText(),Integer.parseInt(txtColonne.getText()),Integer.parseInt(txtRangee.getText()),Integer.parseInt(txtParution.getText()),txtResume.getText()));
-            hboxContainer.getChildren().removeAll(nomCase,colonneText);
-            txtTitre.clear();
+            books.add(new Book(txtTitre.getText(),txtAuteur.getText(),Integer.parseInt(txtColonne.getText()),Integer.parseInt(txtRangee.getText()),Integer.parseInt(txtParution.getText()),txtResume.getText()));// on ajoute les données dans la liste
+            hboxContainer.getChildren().removeAll(nomCase,colonneText);// on supprime les vbox qui ne sont pas utiles
+            txtTitre.clear();// on vide les champs
             txtAuteur.clear();
             txtColonne.clear();
             txtRangee.clear();
             txtParution.clear();
             txtResume.clear();
         });
-        btnAjouter.setOnAction(event -> {
+        btnAjouter.setOnAction(event -> {                                   // on ajoute les vbox lorsqu'on clique sur le bouton ajouter
             hboxContainer.getChildren().addAll(nomCase,colonneText);
+        });
+        btnSupprimer.setOnAction(event -> {                                 // on supprime les vbox quand on appuis sur le bouton supprimer
+            Book book = tbData.getSelectionModel().getSelectedItem();
+            books.remove(book);
         });
 
     }
     private ObservableList<Book> books = FXCollections.observableArrayList(
-            new Book("Titre 1", "Auteur 1", 1, 1, 2021, "Resume 1")
+            new Book("Titre 1", "Auteur 1", 1, 1, 2021, "Resume 1")     // on ajoute des données dans la liste "book"
     );
 
 

@@ -55,17 +55,17 @@ public class ConverterController implements Initializable {
             if (txtDecimal.getText() == "") { // If the text field of decimal is empty
                 txtBinaire.setText(""); // Delete what's inside the text field of the hexadecimal
             } else {
-                int decimal = Integer.parseInt(txtDecimal.getText());
-                txtBinaire.setText(String.valueOf(convertDecimalToBinary(decimal)));
+                int decimal = Integer.parseInt(txtDecimal.getText());                       // Converti les String en Integer
+                txtBinaire.setText(String.valueOf(convertDecimalToBinary(decimal)));        // la conversion se fait en tapant dans le text field de la valeur decimal
             }
         });
 
         txtBinaire.setOnKeyTyped(event2 -> {
-            if (txtBinaire.getText() == "") { // If the text field of decimal is empty
-                txtDecimal.setText(""); // Delete what's inside the text field of the hexadecimal
+            if (txtBinaire.getText() == "") {                                               // If the text field of decimal is empty
+                txtDecimal.setText("");                                                     // Delete what's inside the text field of the hexadecimal
             } else {
-                int binaire = Integer.parseInt(txtBinaire.getText());
-                txtDecimal.setText(String.valueOf(convertBinaryToDecimal(binaire)));
+                int binaire = Integer.parseInt(txtBinaire.getText());                       //transorme les String en Integer
+                txtDecimal.setText(String.valueOf(convertBinaryToDecimal(binaire)));        // la conversion se fait en tapant dans le text field de la valeur binaire
             }
         });
 
